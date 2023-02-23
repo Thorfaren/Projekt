@@ -1,0 +1,39 @@
+
+public class Customer {
+	/**
+	* Skapar en kund (kontoinnehavare) med namnet 'name' och id-nummer 'idNr'.
+	* Kunden tilldelas också ett unikt kundnummer.
+	*/
+	
+	private String name;
+	private int customerNbr;
+	private long idNr;
+	
+	Customer(String name, long idNr) {
+		this.name = name;
+		this.idNr = idNr;
+		
+	}
+	
+	/** Tar reda på kundens namn. */
+	String getName() {
+		return this.name;
+	}
+	
+	/** Tar reda på kundens personnummer. */
+	long getIdNr() {
+		return idNr;
+	}
+	
+	/** Tar reda på kundens kundnummer. */
+	int getCustomerNbr() {
+		return customerNbr;
+	}
+	
+	/** Returnerar en strängbeskrivning av kunden. */
+	public String toString() {
+		String output = "Name: " + name + "id: " + idNbr + " Customer Number: " + customerNbr;
+		return output;
+	}
+
+}

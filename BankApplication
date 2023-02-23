@@ -1,0 +1,93 @@
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+public class BankApplication {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		Bank bank = new Bank();
+		
+		while (true) {
+			Menu();
+			while (!scan.hasNextInt()) {
+				System.out.println("Du skrev en orimlig tal/siffra, välj mellan 1-9");
+				scan.nextLine();
+				Menu();
+			}
+			
+			int val = scan.nextInt();
+			
+			
+			if (val == 1) {
+				//Hitta konton för en viss kontoinnehavare
+			}
+			
+			
+			else if (val == 2) {
+				//Sök kontoinnehavare på (del av) namn
+			}
+			
+			
+			else if (val == 3) {
+				//Sätta in pengar
+			}
+			
+			
+			else if (val == 4) {
+				//Ta ut pengar
+			}
+			
+			
+			else if (val == 5) {
+				//Överföring mellan konton
+			}
+			
+			
+			else if (val == 6) {
+				//Skapa nytt konto
+				System.out.println("Namn: ");
+				String name = scan.nextLine();
+				System.out.println("Id nummer: ");
+				int id = scan.nextInt();
+				bank.addAccount(name, id);
+				//System.out.print("Följande konto har skapats:");
+				
+				
+			}
+			
+			
+			else if (val == 7) {
+				//Ta bort konto
+			}
+			
+			
+			else if (val == 8) {
+				//Skriv ut bankens alla konton
+			}
+			
+			
+			else if (val == 9) {
+				//avsluta
+				System.out.println("Bai Bai");
+				System.exit(0);
+			}
+			
+			else {
+				System.out.println("Du skrev en orimlig tal/siffra, välj mellan 1-9");			}
+		}
+		
+	}
+	
+	private static void Menu() {
+	System.out.println("1. Hitta konto utifrån innehavare");
+	System.out.println("2. Sök kontoinnehavare på (del av) namn");
+	System.out.println("3. Sätt in");
+	System.out.println("4. Ta ut");
+	System.out.println("5. Överföring");
+	System.out.println("6. Skapa konto");
+	System.out.println("7. Ta bort konto");
+	System.out.println("8. Skriv ut konton");
+	System.out.println("9. Avsluta");
+	System.out.print("val: ");
+	}
+}

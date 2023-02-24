@@ -1,19 +1,25 @@
+
 public class BankAccount {
 	/**
 	* Skapar ett nytt bankkonto åt en innehavare med namn 'holderName' och
 	* id 'holderId'. Kontot tilldelas ett unikt kontonummer och innehåller
 	* inledningsvis 0 kr.
 	*/
-	private String holderName;
-	private long holderId;
-	private Customer holder;
-	private double money;
-	private int accountNbr;
+	String holderName;
+	long holderId;
+	Customer holder;
+	double money;
+	int accountNbr;
+	static int count;
 	
 	
 	BankAccount(String holderName, long holderId) {
 	this.holderName = holderName;
 	this.holderId = holderId;
+	count++;
+	accountNbr = count;
+	money = 0;
+	
 	}
 	
 	/**
@@ -22,6 +28,11 @@ public class BankAccount {
 	*/
 	BankAccount(Customer holder){
 		this.holder = holder;
+		this.holderName = holder.getName();
+		this.holderId = holder.getIdNr();
+		count++;
+		accountNbr = count;
+		money = 0;
 	}
 	
 	/** Tar reda på kontots innehavare. */
@@ -44,7 +55,7 @@ public class BankAccount {
 	void deposit(double amount) {
 		money = money + amount;
 	}
-	/**
+	/*
 	* Tar ut beloppet 'amount' från kontot. Om kontot saknar täckning
 	* blir saldot negativt.
 	*/

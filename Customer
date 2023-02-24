@@ -6,12 +6,15 @@ public class Customer {
 	*/
 	
 	private String name;
+	static int count;
 	private int customerNbr;
 	private long idNr;
 	
 	Customer(String name, long idNr) {
 		this.name = name;
 		this.idNr = idNr;
+		count++;
+		customerNbr = count;
 		
 	}
 	
@@ -32,7 +35,7 @@ public class Customer {
 	
 	/** Returnerar en strängbeskrivning av kunden. */
 	public String toString() {
-		String output = "Name: " + name + "id: " + idNbr + " Customer Number: " + customerNbr;
+		String output = "Name: " + name + "id: " + idNr + " Customer Number: " + customerNbr;
 		return output;
 	}
 
